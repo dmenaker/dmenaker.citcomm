@@ -3,7 +3,7 @@
 $(function () {
     $("#infowindow").dialog({
         scrollTop: 0,
-        autoOpen: true,
+        autoOpen: false,
         height: 400,
         width: 900
     
@@ -16,30 +16,30 @@ $(function () {
 });   
 
 //Define the fire marker icons
-var fireIcon1 = L.icon({
-    iconUrl: 'img/forest.png',
-    iconSize: [10,10]
-});
-
-var fireIcon2 = L.icon({
-    iconUrl: 'img/forest.png',
-    iconSize: [25,25]
-});
-
-var fireIcon3 = L.icon({
-    iconUrl: 'img/forest.png',
-    iconSize: [40,40]
-});
-
-var fireIcon4 = L.icon({
-    iconUrl: 'img/forest.png',
-    iconSize: [55,55]
-});
-
-var fireIcon5 = L.icon({
-    iconUrl: 'img/forest.png',
-    iconSize: [90,90]
-});
+//var fireIcon1 = L.icon({
+//    iconUrl: 'img/forest.png',
+//    iconSize: [10,10]
+//});
+//
+//var fireIcon2 = L.icon({
+//    iconUrl: 'img/forest.png',
+//    iconSize: [25,25]
+//});
+//
+//var fireIcon3 = L.icon({
+//    iconUrl: 'img/forest.png',
+//    iconSize: [40,40]
+//});
+//
+//var fireIcon4 = L.icon({
+//    iconUrl: 'img/forest.png',
+//    iconSize: [55,55]
+//});
+//
+//var fireIcon5 = L.icon({
+//    iconUrl: 'img/forest.png',
+//    iconSize: [90,90]
+//});
 
 
 //Function to select icon size based on fire size
@@ -57,119 +57,120 @@ function iconByAcres(feature){
 };
 
 //Load basemaps
-var imagery = L.esri.basemapLayer('ImageryFirefly'),
+var gray = L.esri.basemapLayer('DarkGray'),
     topo = L.esri.basemapLayer('Topographic'),
-    gray = L.esri.basemapLayer('DarkGray'),
+    imagery = L.esri.basemapLayer('ImageryFirefly'),
     
     //add places data
     places = L.esri.tiledMapLayer({
         url: 'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer'
-    }),
+    });
     
     //Add the fire data, style it based on acres burned, and symbolize with custom icon
-    fires = L.esri.featureLayer({
-        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/mtbs_FODpoints_DD_wgs84/FeatureServer/0',
-        where: "datefmt = '2000-01'",
-        pointToLayer: function(feature, latlng) {return L.marker(latlng, {icon: iconByAcres(feature)})},
-    }),
+//    fires = L.esri.featureLayer({
+//        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/mtbs_FODpoints_DD_wgs84/FeatureServer/0',
+//        where: "datefmt = '2000-01'",
+//        pointToLayer: function(feature, latlng) {return L.marker(latlng, {icon: iconByAcres(feature)})},
+//    }),
     
     
     //Add and symbolize the drought data
-    drought = L.esri.featureLayer({
-        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/Drought_Data_2000_2019/FeatureServer/0',
-       //simplifyFactor: 0.35,
-        useCors: true,
-        where: "datefmt = '2000-01'",
-
-        style: function (feature){
-            if (feature.properties.DM === 4) {
-                return {color: '#640000', fillOpacity: '0.7', opacity: '0.5', weight: 1};
-            } else if (feature.properties.DM === 3) {
-                return {color: '#fe0000',  fillOpacity: '0.65',opacity: '0.5', weight: 1};
-            } else if (feature.properties.DM === 2) {
-                return {color: '#fe6603',  fillOpacity: '0.65',opacity: '0.5', weight: 1};
-            } else if (feature.properties.DM === 1) {
-                return {color: '#ffcb99',  fillOpacity: '0.65', opacity: '0.5', weight: 1};
-            } else {
-                return {color: '#fffe03',  fillOpacity: '0.5',opacity: '0.5', weight: 1};
-            }
-        }
-    }),
+//    drought = L.esri.featureLayer({
+//        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/Drought_Data_2000_2019/FeatureServer/0',
+//       //simplifyFactor: 0.35,
+//        useCors: true,
+//        where: "datefmt = '2000-01'",
+//
+//        style: function (feature){
+//            if (feature.properties.DM === 4) {
+//                return {color: '#640000', fillOpacity: '0.7', opacity: '0.5', weight: 1};
+//            } else if (feature.properties.DM === 3) {
+//                return {color: '#fe0000',  fillOpacity: '0.65',opacity: '0.5', weight: 1};
+//            } else if (feature.properties.DM === 2) {
+//                return {color: '#fe6603',  fillOpacity: '0.65',opacity: '0.5', weight: 1};
+//            } else if (feature.properties.DM === 1) {
+//                return {color: '#ffcb99',  fillOpacity: '0.65', opacity: '0.5', weight: 1};
+//            } else {
+//                return {color: '#fffe03',  fillOpacity: '0.5',opacity: '0.5', weight: 1};
+//            }
+//        }
+//    }),
     
     //Add state data
-    states = L.esri.featureLayer({
-        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/States_drought/FeatureServer/0',
-        useCors: true,
-        simplifyFactor: 0.6,
-        precision: 4,
-        onEachFeature: onEachFeature,
-        pane: 'statespane',
-        style: {fillOpacity: 0, weight:1.5, color:'#8c8c8c'}
-    });
+//    states = L.esri.featureLayer({
+//        url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/States_drought/FeatureServer/0',
+//        useCors: true,
+//        simplifyFactor: 0.6,
+//        precision: 4,
+//        onEachFeature: onEachFeature,
+//        pane: 'statespane',
+//        style: {fillOpacity: 0, weight:1.5, color:'#8c8c8c'}
+//    });
 
     //Create pop up for fires
-    fires.bindPopup(function (layer){
-        return L.Util.template('<p>Name: {Incid_Name}<br> {BurnBndAc} Acres Burned</p>', layer.feature.properties);
-    });
-
-    fires.on('mouseout', function () {
-        this.closePopup();
-    });
-
-    //Create pop up for states
-    states.on('click', function (evt) {
-        feature = evt.layer.feature;
-        var statename = feature.properties.STATE_ABBR;
-        var yd = document.getElementById("dateshown").innerHTML;
-        var yr = yd.split("-")[0]
-        var filteryear = yd.split("-")[0] + statename
-        makeSummary(statename, yr, firejson[filteryear]);
-    });
+//    fires.bindPopup(function (layer){
+//        return L.Util.template('<p>Name: {Incid_Name}<br> {BurnBndAc} Acres Burned</p>', layer.feature.properties);
+//    });
+//
+//    fires.on('mouseout', function () {
+//        this.closePopup();
+//    });
+//
+//    //Create pop up for states
+//    states.on('click', function (evt) {
+//        feature = evt.layer.feature;
+//        var statename = feature.properties.STATE_ABBR;
+//        var yd = document.getElementById("dateshown").innerHTML;
+//        var yr = yd.split("-")[0]
+//        var filteryear = yd.split("-")[0] + statename
+//        makeSummary(statename, yr, firejson[filteryear]);
+//    });
 
 //create map
 function createMap(){
     
     var mymap = L.map('mapid', {
-        center: [39, -95],
-        zoom: 4,
-        layers: [imagery, fires, drought, states]
+        center: [40.07, -74.53],
+        zoom: 15,
+        layers: [gray]
     });
     
     //get layers and add to layer control operator
     var baseMaps = {
+        "Gray": gray,
         "Imagery": imagery,
-        "Topographic": topo,
-        "Gray": gray
+        "Topographic": topo
+   
     }
     
-    var overlayMaps = {
-        "Places": places,
-        "Fires": fires,
-        "Drought": drought
-    }
+//    var overlayMaps = {
+//        "Places": places,
+//        "Fires": fires,
+//        "Drought": drought
+//    }
 
     //get json data 
-    getData(mymap);
+    //getData(mymap);
 
     //create a pane to put states on top
-    mymap.createPane('statespane');
+    //mymap.createPane('statespane');
 
 
     //run the create sequence control function
-    createSequenceControls(mymap);
+    //createSequenceControls(mymap);
     
     //create the legend
-    newLegend(mymap);
+    //newLegend(mymap);
 
     
     //add layers & layer control to map
-    L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+    L.control.layers(baseMaps).addTo(mymap);
 
     //add event listener for year query change and call updateYear function
-    var yearquery = document.getElementById('yearselect');
-    yearquery.addEventListener('change', function () {
-        updateYear();
-    });
+//    var yearquery = document.getElementById('yearselect');
+//    yearquery.addEventListener('change', function () {
+//        updateYear();
+//    });
 };
 
 //create sequence controls for map data
@@ -377,28 +378,28 @@ function newLegend(mymap){
 
 var  firejson = {}
 //load fire summary table
-function getData(mymap){   
-    $.getJSON( "data/Fire_Table_by_State.json", function( data ) {
-        $.each( data, function( key, val ) {
-            firejson[val.year + val.state_abbr]= val
-         });
-    });
-};
+//function getData(mymap){   
+//    $.getJSON( "data/Fire_Table_by_State.json", function( data ) {
+//        $.each( data, function( key, val ) {
+//            firejson[val.year + val.state_abbr]= val
+//         });
+//    });
+//};
 
 
 //function to add fire summary data to DOM
-function makeSummary(statename, yr, data) {
-    openNav()
-    
-    if (data == undefined) {
-        $('#summText').html('There were no large fires in ' + statename + ' in ' + yr);
-    } else {
-        $('#summText').html('<h2>Fire Summary<br>' + statename + ' ' + yr + ' </h2>' +
-                              '<br>Total Large Fires: ' + data.count + '<br>Total Acreage Burned: ' + data.total_ac);
-    };
-   
-    console.log(typeof data);
-    console.log(data.count);
+//function makeSummary(statename, yr, data) {
+//    openNav()
+//    
+//    if (data == undefined) {
+//        $('#summText').html('There were no large fires in ' + statename + ' in ' + yr);
+//    } else {
+//        $('#summText').html('<h2>Fire Summary<br>' + statename + ' ' + yr + ' </h2>' +
+//                              '<br>Total Large Fires: ' + data.count + '<br>Total Acreage Burned: ' + data.total_ac);
+//    };
+//   
+//    console.log(typeof data);
+//    console.log(data.count);
 
 
 
@@ -508,7 +509,7 @@ function makeSummary(statename, yr, data) {
         )
 
     }) */
-};
+//};
 
 //create the map when the dom is ready
 $(document).ready(createMap);

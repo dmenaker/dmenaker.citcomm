@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    
+    {
+    "type": "Feature",
+    "properties": {
+        "Scout": "Chris Alvik",
+        "Description": "Improvements to the food pantry and landscaping",
+        "Beneficiary": "Plumsted Presbyterian Church",
+        "Troop":"9"
+    },
+    "geometry": {"type": "Point", "coordinates": [-74.530498, 40.066535]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Anthony Plaag",
+        "Description": "Bird Thing",
+        "Beneficiary": "",
+        "Troop": "109"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.530240, 40.066096]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Luke Fennimore",
+        "Description": "Meditation Path",
+        "Beneficiary": "Plumsted Presbyterian Church",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.530828, 40.066953]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Quinn Kimmick",
+        "Description": "Signs and landscaping",
+        "Beneficiary": "Plumsted Recreation",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.529900, 40.065392]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout":"Brandon Grady",
+        "Description":"Benches and paver path",
+        "Beneficiary":"Plumsted Recreation",
+        "Troop":"9"
+    },
+    "geometry":{"type":"Point","coordinates":[-74.527217, 40.063959]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Plantings to naturally clean lake",
+        "Beneficiary": "Plumsted Township",
+        "Troop": ""
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.532293, 40.065543]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Will Levorse",
+        "Description": "Picnic patio",
+        "Beneficiary": "New Egypt United Methodist Church",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.528114, 40.070111]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Refurbish historic artesian well",
+        "Beneficiary": "Plumsted Township",
+        "Troop": ""
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.532664, 40.066957]}
+    },
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Nature Trail",
+        "Beneficiary": "Plumsted Township",
+        "Troop": "109"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.479442, 40.069123]}
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Outdoor classroom",
+        "Beneficiary": "Plumsted Township",
+        "Troop": ""
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.533094, 40.064323]}
+    }
+    
+  ]
+}

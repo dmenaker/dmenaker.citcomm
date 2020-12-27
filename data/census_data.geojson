@@ -1,0 +1,517 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Montgomery, AL",
+        "location": "The National Memorial for Peace and Justice",
+        "detail": "The memorial, consisting of 800 six foot monuments, one for each county with a documented history of racial terror, creates a striking testimony to the senseless violence, where thousands of Americans were lynched at the hands of their neighbors.",
+        "source": "civilrightstrail.com/attraction/the-national-memorial-for-peace-and-justice",
+        "Pop_1850": 19.542,
+        "Pop_1870": 31.285,
+        "Pop_1890": 41.485,
+        "Pop_1910": 56.867,
+        "Pop_1930": 52.144,
+        "Pop_1950": 42.538,
+        "Pop_1970": 44.523,
+        "Pop_1990": 105.196
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.313544,
+          32.372198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Washington, DC",
+        "location": "The Frederick Douglass National Historic Site",
+        "detail": "Home to abolitionist, social reformer, orator, writer and statesman Frederick Douglass, from 1878 until his death in 1895.",
+        "source": "nps.gov/frdo",
+        "Pop_1850": 13.746,
+        "Pop_1870": 43.404,
+        "Pop_1890": 76.672,
+        "Pop_1910": 94.446,
+        "Pop_1930": 132.068,
+        "Pop_1950": 280.803,
+        "Pop_1970": 537.705,
+        "Pop_1990": 1041.934
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.985187,
+          38.863405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Savannah, GA",
+        "location": "The First African Baptist Church",
+        "detail": "The oldest Black congregation in North America, built by church members who were mostly slaves working on plantations surrounding the city.",
+        "source": "visitsavannah.com/itinerary/savannah-black-heritage-experience",
+        "Pop_1850": 14.749,
+        "Pop_1870": 24.518,
+        "Pop_1890": 34.757,
+        "Pop_1910": 43.081,
+        "Pop_1930": 49.707,
+        "Pop_1950": 48.282,
+        "Pop_1970": 53.111,
+        "Pop_1990": 86.228
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.096061,
+          32.08131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Chicago, IL",
+        "location": "The Monmument to the Great Northern Migration",
+        "detail": "This bronze statue by Alison Saar is a memorial to the thousands of African-Americans who migrated to Chicago in the early 20th century, seeking freedom and opportunity.",
+        "source": "choosechicago.com/listing/monument-to-the-great-migration/",
+        "Pop_1850": 0.378,
+        "Pop_1870": 3.858,
+        "Pop_1890": 14.910,
+        "Pop_1910": 46.627,
+        "Pop_1930": 246.992,
+        "Pop_1950": 572.180,
+        "Pop_1970": 1102.620,
+        "Pop_1990": 1332.919
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.61752,
+          41.846876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "New Orleans, LA",
+        "location": "The former site of the St. Louis Exchange Hotel",
+        "detail": "Slave auctions were featured events at the St. Louis Exchange Hotel, considered to be high society events, where men and women came dressed and bejeweled to drink and dine while fellow humans were bought and sold for top dollar.",
+        "source": "vianolavie.org/2017/12/13/the-st-louis-exchange-hotel-and-the-new-orleans-slave-trade",
+        "Pop_1850": 28.029,
+        "Pop_1870": 50.456,
+        "Pop_1890": 64.491,
+        "Pop_1910": 89.262,
+        "Pop_1930": 129.632,
+        "Pop_1950": 181.775,
+        "Pop_1970": 267.294,
+        "Pop_1990": 430.470
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.065287,
+          29.955901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Baltimore, MD",
+        "location": "The Lillie Carroll Jackson Civil Rights Museum",
+        "detail": "Former home to Baltimore Chapter NAACP president and civil rights activist Lillie Carroll Jackson, where civils rights campaigns were often organized.",
+        "source": "baltimore.org/what-to-do/experience-african-american-history-in-baltimore",
+        "Pop_1850": 35.793,
+        "Pop_1870": 47.921,
+        "Pop_1890": 67.104,
+        "Pop_1910": 84.749,
+        "Pop_1930": 142.100,
+        "Pop_1950": 225.099,
+        "Pop_1970": 420.210,
+        "Pop_1990": 616.065
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.626981,
+          39.304371
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Boston, MA",
+        "location": "The Lewis and Harriet Hayden House",
+        "detail": "Lewis Hayden was a successful businessman, abolitionist, and activist after escaping from enslavement through the Underground Railroad.<br>Mr. Hayden later went on to serve as a state representative.",
+        "source": "features.wgbhnews.org/exploring-bostons-black-history-and-culture-through-15-significant-sites",
+        "Pop_1850": 2.039,
+        "Pop_1870": 3.735,
+        "Pop_1890": 8.845,
+        "Pop_1910": 13.880,
+        "Pop_1930": 21.026,
+        "Pop_1950": 40.057,
+        "Pop_1970": 104.707,
+        "Pop_1990": 209.970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.06906,
+          42.36026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Detroit, MI",
+        "location": "The Second Baptist Church",
+        "detail": "The Second Baptist Church sheltered nearly 5,000 fugitive slaves as a stop on the Underground Railroad between 1836 and 1865.",
+        "source": "visitdetroit.com/itinerary/discover-detroits-black-history",
+        "Pop_1850": 0.724,
+        "Pop_1870": 2.683,
+        "Pop_1890": 3.815,
+        "Pop_1910": 6.085,
+        "Pop_1930": 131.747,
+        "Pop_1950": 300.506,
+        "Pop_1970": 660.428,
+        "Pop_1990": 943.479
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.042961,
+          42.334806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Jackson, MS",
+        "location": "The Medgar Evers Home Museum",
+        "detail": "Home of Medgar Evers, a WWII veteran, the first NAACP field sectretary, and a prominent civil rights organizer.<br>He was assasinated at his home in 1963 by Byron De La Beckwith, a member of the White Citizens' Council.",
+        "source": "civilrightstrail.com/attraction/medgar-evers-home",
+        "Pop_1850": 16.650,
+        "Pop_1870": 20.659,
+        "Pop_1890": 28.368,
+        "Pop_1910": 45.407,
+        "Pop_1930": 40.559,
+        "Pop_1950": 40.168,
+        "Pop_1970": 61.063,
+        "Pop_1990": 167.899
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.212647,
+          32.340837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "New York, NY",
+        "location": "Seneca Village",
+        "detail": "A vibrant community, home to 250 free Blacks from the 1820's to the 1850's.<br>In 1856 the city used eminent domain to take private property in order to construct Central Park, forcing the residents to disband.<br>They were not able to re-establish their community elsewhere.",
+        "source": "nycgovparks.org/parks/central-park/highlights/13602",
+        "Pop_1850": 21.921,
+        "Pop_1870": 23.303,
+        "Pop_1890": 39.401,
+        "Pop_1910": 91.709,
+        "Pop_1930": 327.706,
+        "Pop_1950": 747.608,
+        "Pop_1970": 1668.115,
+        "Pop_1990": 2250.026
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.968929,
+          40.783996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Charlotte, NC",
+        "location": "Old Good Samaritan Hospital",
+        "detail": "Now torn down, the Old Good Samaritan Hospital opened in 1891 as the first privately funded, independent hospital in North Carolina built exclusively for the treatment of Blacks.<br>It served what was once a thriving post Reconstruction Black community.",
+        "source": "landmarkscommission.org/2016/11/09/old-good-samaritan-hospital",
+        "Pop_1850": 5.629,
+        "Pop_1870": 10.721,
+        "Pop_1890": 19.526,
+        "Pop_1910": 25.481,
+        "Pop_1930": 38.023,
+        "Pop_1950": 37.616,
+        "Pop_1970": 72.972,
+        "Pop_1990": 231.654
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.854523,
+          35.226768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Philadelphia, PA",
+        "location": "Cliveden",
+        "detail": "Home of the well connected Chew family, owners of nine slave plantations in Maryland and Delaware.<br>The Chew's also maintained slaves at their homes in the Philadelphia region.",
+        "source": "cliveden.org",
+        "Pop_1850": 19.761,
+        "Pop_1870": 22.147,
+        "Pop_1890": 39.371,
+        "Pop_1910": 84.459,
+        "Pop_1930": 219.599,
+        "Pop_1950": 376.041,
+        "Pop_1970": 653.791,
+        "Pop_1990": 929.907
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.181442,
+          40.047526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Charleston, SC",
+        "location": "Sullivan's Island",
+        "detail": "Sullivan's Island was the arrival point for tens of thousands of enslaved Africans torn from their homes between 1700 and 1775.<br>About 40% of African-Americans alive today can trace their roots through Sullivan's Island.",
+        "source": "www.africanamericancharleston.com/places",
+        "Pop_1850": 58.636,
+        "Pop_1870": 60.603,
+        "Pop_1890": 35.073,
+        "Pop_1910": 56.033,
+        "Pop_1930": 54.812,
+        "Pop_1950": 68.055,
+        "Pop_1970": 77.884,
+        "Pop_1990": 153.227
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.85675,
+          32.759176
+        ]
+      }
+    },
+    {
+      "type": "Feature", 
+      "properties": {
+        "City": "Dallas, TX", 
+        "location": "The Dallas Historical Society",
+        "detail": "Permanent home to General Order Number 3 Emancipation Proclamation issued by Union General Gordon Granger on June 19, 1865.<br>This date would go on to be celebrated by Black people in American as Juneteenth.",
+        "source": "www.visitdallas.com/about/diverse-dallas/civil-rights/index.html",
+        "Pop_1850": 0.207,
+        "Pop_1870": 2.109,
+        "Pop_1890": 11.177,
+        "Pop_1910": 24.355,
+        "Pop_1930": 47.879,
+        "Pop_1950": 56.958,
+        "Pop_1970": 210.238,
+        "Pop_1990": 410.766
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.761255,
+          32.780792
+        ]
+      }
+    },
+    
+    {
+      "type": "Feature",
+      "properties": {
+        "City": "Richmond, VA",
+        "location": "The Jefferson Davis Memorial",
+        "detail": "Statue and monument honoring the only President of the Confederate States.<br>As the Confederacy was in open rebellion against the United States, this monument, and others of Confederate generals located across America, act more as a reminder to African-American residents of their place in the caste system, as opposed to honoring anyone.<br>This monmument was erected in 1907, over four decades after the war ended and was substantially removed in 2020.",
+        "source": "virginiaplaces.org/vacities/monavedavis.html",
+        "Pop_1850": 19.746,
+        "Pop_1870": 31.031,
+        "Pop_1890": 43.595,
+        "Pop_1910": 53.570,
+        "Pop_1930": 59.494,
+        "Pop_1950": 72.996,
+        "Pop_1970": 104.766,
+        "Pop_1990": 252.340
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.467676,
+          37.558378
+        ]
+      }
+    },
+    
+    {
+        "type": "Feature",
+        "properties": {
+            "Scout": "Chris Alvik",
+            "Description": "Improvements to the food pantry and landscaping",
+            "Beneficiary": "Plumsted Presbyterian Church",
+            "Troop":"9"
+            },
+
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                -74.530498,
+                40.066535
+                ]
+            }
+
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"Anthony Plaag",
+                "Description":"Bird Thing",
+                "Beneficiary":"",
+                "Troop":"109"
+            },
+
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.530240, 40.066096]
+            }
+
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"Luke Fennimore",
+                "Description":"Meditation Path",
+                "Beneficiary":"Plumsted Presbyterian Church",
+                "Troop":"9"
+            },
+            
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.530828, 40.066953]
+            }
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"Quinn Kimmick",
+                "Description":"Signs and landscaping",
+                "Beneficiary":"Plumsted Recreation",
+                "Troop":"9"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.529900, 40.065392]
+            }
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"Brandon Grady",
+                "Description":"Benches and paver path",
+                "Beneficiary":"Plumsted Recreation",
+                "Troop":"9"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.527217, 40.063959]
+            }
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"",
+                "Description":"Plantings to naturally clean lake",
+                "Beneficiary":"Plumsted Township",
+                "Troop":""
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.532293, 40.065543]
+            }
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"Will Levorse",
+                "Description":"Picnic patio",
+                "Beneficiary":"New Egypt United Methodist Church",
+                "Troop":"9"
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.528114, 40.070111]
+            }
+
+        },
+
+        {
+            "type":"Feature",
+            "properties":{
+                "Scout":"",
+                "Description":"Refurbish historic artesian well",
+                "Beneficiary":"Plumsted Township",
+                "Troop":""
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-74.532664, 40.066957]
+            }
+
+        },
+        
+        {
+        "type":"Feature",
+        "properties":{
+            "Scout":"",
+            "Description":"Nature Trail",
+            "Beneficiary":"Plumsted Township",
+            "Troop":"109"
+        },
+        "geometry":{"type":"Point", "coordinates":[-74.479442, 40.069123]}
+        },
+
+        {
+        "type":"Feature",
+        "properties":{
+            "Scout":"",
+            "Description":"Outdoor classroom",
+            "Beneficiary":"Plumsted Township",
+            "Troop":""
+        },
+        "geometry":{"type":"Point", "coordinates":[-74.533094, 40.064323]}
+        }
+  ]
+}

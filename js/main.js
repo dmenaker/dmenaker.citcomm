@@ -15,18 +15,16 @@ $(function () {
 
 });   
 
+//add esri basemap tilelayers
+var gray = L.esri.basemapLayer('DarkGray');
+var imagery = L.esri.basemapLayer('ImageryFirefly');
+
+//add osm basemap tilelayer
+var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
+
 function createMap(){
-    
-    //add esri basemap tilelayers
-    var gray = L.esri.basemapLayer('DarkGray');
-    var imagery = L.esri.basemapLayer('ImageryFirefly');
-    
-    //add osm basemap tilelayer
-    var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    }
-    );
-    
+        
     //create the map
     var map = L.map('mapid', {
         center: [40.07, -74.53], //y,x
@@ -40,11 +38,20 @@ function createMap(){
         "Imagery": imagery
     };
     
+//    var overlaymaps = {
+//        "Municipal": mun,
+//        "Emg Services": emg,
+//        "Hospitals": hos,
+//        "Recreation": rec
+//    };
+    
     L.control.layers(basemaps).addTo(map);
     gray.addTo(map);
 
+        
     //call getData function
     getData(map);
+
 };
 
 //function to retrieve the data and place it on the map
@@ -55,7 +62,7 @@ function getData(map){
         success: function(response){
 
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
+            var eagle = L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
         }    
@@ -66,7 +73,7 @@ function getData(map){
         success: function(response){
 
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
+            var emg = L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
         }    
@@ -77,7 +84,7 @@ function getData(map){
         success: function(response){
 
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
+            var rec = L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
         }    
@@ -88,7 +95,7 @@ function getData(map){
         success: function(response){
 
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
+            var mun = L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
         }    
@@ -99,7 +106,7 @@ function getData(map){
         success: function(response){
 
             //create a Leaflet GeoJSON layer and add it to the map
-            L.geoJson(response, {
+            var hos = L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
         }    

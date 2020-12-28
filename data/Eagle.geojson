@@ -101,7 +101,27 @@
     "geometry":{"type":"Point", "coordinates":[-74.479442, 40.069123]}
     },
 
-
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Randy Barnes",
+        "Description": "Rebuild the Service Member Honor Roll Wall",
+        "Beneficiary": "American Legion Post 455",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.536623, 40.069366]}
+    },    
+    
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Install handrails around sidewalks",
+        "Beneficiary": "American Legion Post 455",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.536529, 40.069726]}
+    },
 
 
 

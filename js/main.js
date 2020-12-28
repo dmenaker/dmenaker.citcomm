@@ -58,8 +58,54 @@ function getData(map){
             L.geoJson(response, {
                 onEachFeature: onEachFeature
             }).addTo(map);
-        }
+        }    
     });
+    
+    $.ajax("data/EmgServ.geojson", {
+        dataType: "json",
+        success: function(response){
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            L.geoJson(response, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+        }    
+    }); 
+    
+    $.ajax("data/Rec.geojson", {
+        dataType: "json",
+        success: function(response){
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            L.geoJson(response, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+        }    
+    });
+    
+    $.ajax("data/Mun.geojson", {
+        dataType: "json",
+        success: function(response){
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            L.geoJson(response, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+        }    
+    });
+    
+    $.ajax("data/Hos.geojson", {
+        dataType: "json",
+        success: function(response){
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            L.geoJson(response, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+        }    
+    }); 
+    
+    
 };
 
 //function to attach popups to each mapped feature

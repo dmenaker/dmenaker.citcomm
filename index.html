@@ -29,6 +29,8 @@
         <script src="data/Mun.js"></script>
         <script src="data/Rec.js"></script>
         
+        
+        
         <script type="text/javascript">
         
         //create blank function to create info window dialog when DOM is ready
@@ -53,7 +55,7 @@
             
             map = L.map('mapid', {
                 center: [40.07, -74.53],
-                zoom: 14,
+                zoom: 11,
             });
 
             //add tilelayers
@@ -61,7 +63,7 @@
             var imagery = L.esri.basemapLayer('ImageryFirefly');
             var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
-
+            
             //create a Leaflet GeoJSON layer and add it to the map
             var eagle = L.geoJson(eagleJson, {
                 onEachFeature: onEachFeature
@@ -69,23 +71,33 @@
 
             //create a Leaflet GeoJSON layer and add it to the map
             var emg = L.geoJson(emgJson, {
-                onEachFeature: onEachFeature
+                onEachFeature: onEachFeature,
+                style: function(feature) {
+                    switch (feature.properties.Use) {
+                                case 'Fire': return {color: "red"};
+                                case 'Police': return {color: "blue"};
+                                case 'EMS': return {color: "white"};
+                    }
+                }
             }).addTo(map);    
 
             //create a Leaflet GeoJSON layer and add it to the map
             var rec = L.geoJson(recJson, {
-                onEachFeature: onEachFeature
+                onEachFeature: onEachFeature,
+                color: "green"
             }).addTo(map);
 
             //create a Leaflet GeoJSON layer and add it to the map
             var mun = L.geoJson(munJson, {
-                onEachFeature: onEachFeature
+                onEachFeature: onEachFeature,
+                color: "lightblue"
             }).addTo(map);
 
 
             //create a Leaflet GeoJSON layer and add it to the map
             var hos = L.geoJson(hosJson, {
-                onEachFeature: onEachFeature
+                onEachFeature: onEachFeature,
+                color: "white"
             }).addTo(map);
  
 

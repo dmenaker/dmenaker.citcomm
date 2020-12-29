@@ -61,7 +61,7 @@ var eagleJson =
     {
     "type":"Feature",
     "properties":{
-        "Scout": "",
+        "Scout": "Andy Levorse",
         "Description": "Plantings to naturally clean lake",
         "Beneficiary": "Plumsted Township",
         "Troop": ""
@@ -80,6 +80,39 @@ var eagleJson =
     "geometry":{"type":"Point", "coordinates":[-74.528114, 40.070111]}
     },
 
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Jack Levorse",
+        "Description": "Prayer Garden",
+        "Beneficiary": "New Egypt United Methodist Church",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.528521, 40.069876]}
+    }, 
+    
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Paul Peterla",
+        "Description": "Three crosses",
+        "Beneficiary": "New Egypt United Methodist Church",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.528484, 40.070079]}
+    },
+        
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Patrick Roach",
+        "Description": "Prayer Garden",
+        "Beneficiary": "Church of the Assumption",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.553715, 40.076502]}
+    }, 
+    
     {
     "type":"Feature",
     "properties":{
@@ -116,15 +149,35 @@ var eagleJson =
     {
     "type":"Feature",
     "properties":{
-        "Scout": "",
+        "Scout": "Adam Fennimore",
         "Description": "Install handrails around sidewalks",
         "Beneficiary": "American Legion Post 455",
         "Troop": "9"
     },
     "geometry":{"type":"Point", "coordinates":[-74.536529, 40.069726]}
     },
+      
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Jacob Lawrence",
+        "Description": "American Flag Donation Box",
+        "Beneficiary": "American Legion Post 455",
+        "Troop": "104"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.53660, 40.06977]}
+    },
 
-
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "",
+        "Description": "Refurbish War Memorial",
+        "Beneficiary": "American Legion Post 455",
+        "Troop": "109"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.536507, 40.069588]}
+    },
 
 
 

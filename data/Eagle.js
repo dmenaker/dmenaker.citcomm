@@ -61,10 +61,10 @@ var eagleJson =
     {
     "type":"Feature",
     "properties":{
-        "Scout": "Andy Levorse",
+        "Scout": "Andrea Levorse",
         "Description": "Plantings to naturally clean lake",
         "Beneficiary": "Plumsted Township",
-        "Troop": ""
+        "Troop": "9"
     },
     "geometry":{"type":"Point", "coordinates":[-74.532293, 40.065543]}
     },

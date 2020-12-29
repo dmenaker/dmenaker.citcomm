@@ -23,10 +23,108 @@
         <script type="text/javascript" src= "lib/jquery-ui-1.12.1//jquery-ui.js"></script>
         <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"></script>
         
-	   <script type="text/javascript" src="js/main.js"></script>
+        <script src="data/Eagle.js"></script>
+        <script src="data/EmgServ.js"></script>
+        <script src="data/Hos.js"></script>
+        <script src="data/Mun.js"></script>
+        <script src="data/Rec.js"></script>
+        
+        <script type="text/javascript">
+        
+        //create blank function to create info window dialog when DOM is ready
+        $(function () {
+            $("#infowindow").dialog({
+                scrollTop: 0,
+                autoOpen: true,
+                height: 400,
+                width: 900
+
+            });
+            $("#infowindow").scrollTop(0);
+            $(".info").click(function(){        
+                $("#infowindow").dialog("open");
+            });
+
+        });   
+
+        var map;
+
+        function init() {
+            
+            map = L.map('mapid', {
+                center: [40.07, -74.53],
+                zoom: 14,
+            });
+
+            //add tilelayers
+            var gray = L.esri.basemapLayer('DarkGray');
+            var imagery = L.esri.basemapLayer('ImageryFirefly');
+            var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            var eagle = L.geoJson(eagleJson, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            var emg = L.geoJson(emgJson, {
+                onEachFeature: onEachFeature
+            }).addTo(map);    
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            var rec = L.geoJson(recJson, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            var mun = L.geoJson(munJson, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
+
+            //create a Leaflet GeoJSON layer and add it to the map
+            var hos = L.geoJson(hosJson, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
+ 
+
+            var basemaps = {
+                "Dark Gray": gray,
+                "Street Maps": osm,
+                "Imagery": imagery
+            };
+
+            var overlaymaps = {
+                "Municipal": mun,
+                "Emg Services": emg,
+                "Hospitals": hos,
+                "Recreation": rec,
+                "Eagle Projects": eagle
+            };
+
+            L.control.layers(basemaps, overlaymaps).addTo(map);
+            gray.addTo(map);
+        };
+            
+        //function to attach popups to each mapped feature
+        function onEachFeature(feature, layer) {
+
+            //no property named popupContent; instead, create html string with all properties
+            var popupContent = "";
+            if (feature.properties) {
+                //loop to add feature property names and values to html string
+                for (var property in feature.properties){
+                    popupContent += "<p>" + property + ": " + feature.properties[property] + "</p>";
+                }
+                layer.bindPopup(popupContent);
+            };
+        };
+
+        </script>
 	</head>
 
-	<body>
+	<body onload="init()">
 		<!--create information window for users giving map summary and data sources-->
 		<div id="infowindow" visibility: hidden title = "Map Information"><p>
 			This map can be used while working on requirement 2a. It displays all the locations as required in items one through four. Additionally, it displays Eagle Scout projects throughout New Egypt.<br><br>

@@ -1,3 +1,4 @@
+var eagleJson = 
 {
   "type": "FeatureCollection",
   "features": [
@@ -142,4 +143,4 @@
     }
     
   ]
-}
+};

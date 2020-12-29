@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Citizenship in the NE Community</title>
+
+		<!--put your external stylesheet links here-->
+		<link rel="stylesheet" href="lib/jquery-ui-1.12.1/jquery-ui.css">
+		<link rel="stylesheet" href="lib/leaflet.css">
+		<link rel="stylesheet" href="css/style.css">
+        
+        <script src="lib/jquery-3.5.1.js"></script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="lib/leaflet.js"></script>
+        <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+        integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+        crossorigin=""></script>
+        
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+        
+        <script type="text/javascript" src= "lib/jquery-ui-1.12.1//jquery-ui.js"></script>
+        <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"></script>
+        
+	   <script type="text/javascript" src="js/main.js"></script>
+	</head>
+
+	<body>
+		<!--create information window for users giving map summary and data sources-->
+		<div id="infowindow" visibility: hidden title = "Map Information"><p>
+			This map can be used while working on requirement 2a. It displays all the locations as required in items one through four. Additionally, it displays Eagle Scout projects throughout New Egypt.<br><br>
+			<b><u>How to use:</u></b><br><br>
+			A layer control widget is located in the upper-right corner of the map. You can toggle the basemap between a dark gray, a street map, and aerial imagery. You can also select which layers will be displayed on the map including goverment buildings, emergency services, hospitals, and parks. 
+			<br><br>
+            
+			<b><u>Data Sources:</u></b><br><br> 
+			-Info icon by Joe Pictos from the Noun Project<br>
+            -Eagle icon from freesvg.org</p>
+        </div>
+        
+		<!--create div for map title and info button-->
+        <div id="maptitle"><p id="mapT">Citizenship in the <i>New Egypt</i> Community Merit Badge<button class = "info"><img src = 'img/info.png'></button></p>
+        </div>
+		
+        <!--create div for the map -->
+		<div id="mapid">
+        </div>
+			   
+   </body>
+</html>

@@ -1,4 +1,3 @@
-
 //create blank function to create info window dialog when DOM is ready
 $(function () {
     $("#infowindow").dialog({
@@ -15,6 +14,8 @@ $(function () {
 
 });   
 
+function createMap() {
+    
 //add esri basemap tilelayers
 var gray = L.esri.basemapLayer('DarkGray');
 var imagery = L.esri.basemapLayer('ImageryFirefly');
@@ -22,102 +23,87 @@ var imagery = L.esri.basemapLayer('ImageryFirefly');
 //add osm basemap tilelayer
 var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
-
-function createMap(){
         
-    //create the map
-    var map = L.map('mapid', {
-        center: [40.07, -74.53], //y,x
-        zoom: 14,
-    });
+//create the map
+var map = L.map('mapid', {
+    center: [40.07, -74.53], //y,x
+    zoom: 14,
+});
 
-    getData(map);
+//load geojson data
+$.ajax("data/Eagle.geojson", {
+    dataType: "json",
+    success: function(response){
 
-    var basemaps = {
-        "Dark Gray": gray,
-        "Street Maps": osm,
-        "Imagery": imagery
-    };
-    
+        //create a Leaflet GeoJSON layer and add it to the map
+        var eagle = L.geoJson(response, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }    
+});
 
-    
-    
-    
-    L.control.layers(basemaps, overlaymaps).addTo(map);
-    gray.addTo(map);
+$.ajax("data/EmgServ.geojson", {
+    dataType: "json",
+    success: function(response){
 
-    //call getData function
-    //getData(map);
+        //create a Leaflet GeoJSON layer and add it to the map
+        var emg = L.geoJson(response, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }    
+}); 
 
+$.ajax("data/Rec.geojson", {
+    dataType: "json",
+    success: function(response){
+
+        //create a Leaflet GeoJSON layer and add it to the map
+        var rec = L.geoJson(response, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }    
+});
+
+$.ajax("data/Mun.geojson", {
+    dataType: "json",
+    success: function(response){
+
+        //create a Leaflet GeoJSON layer and add it to the map
+        var mun = L.geoJson(response, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }    
+});
+
+$.ajax("data/Hos.geojson", {
+    dataType: "json",
+    success: function(response){
+
+        //create a Leaflet GeoJSON layer and add it to the map
+        var hos = L.geoJson(response, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }    
+}); 
+
+//define layers and add switcher control
+var basemaps = {
+    "Default": gray,
+    "Street Maps": osm,
+    "Imagery": imagery
 };
 
-//function to retrieve the data and place it on the map
-function getData(map){
-    //load the data
-    $.ajax("data/Eagle.geojson", {
-        dataType: "json",
-        success: function(response){
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            var eagle = L.geoJson(response, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
-        }    
-    });
-    
-    $.ajax("data/EmgServ.geojson", {
-        dataType: "json",
-        success: function(response){
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            var emg = L.geoJson(response, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
-        }    
-    }); 
-    
-    $.ajax("data/Rec.geojson", {
-        dataType: "json",
-        success: function(response){
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            var rec = L.geoJson(response, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
-        }    
-    });
-    
-    $.ajax("data/Mun.geojson", {
-        dataType: "json",
-        success: function(response){
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            var mun = L.geoJson(response, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
-        }    
-    });
-    
-    $.ajax("data/Hos.geojson", {
-        dataType: "json",
-        success: function(response){
-
-            //create a Leaflet GeoJSON layer and add it to the map
-            var hos = L.geoJson(response, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
-        }    
-    }); 
-    
-        var overlaymaps = {
-        "Municipal": mun,
-        "Emg Services": emg,
-        "Hospitals": hos,
-        "Recreation": rec
-    };
-    
+var overlaymaps = {
+    "Municipal": mun,
+    "Emg Services": emg,
+    "Hospitals": hos,
+    "Recreation": rec
 };
 
+L.control.layers(basemaps, overlaymaps).addTo(map);
+gray.addTo(map);
+
+};
 //function to attach popups to each mapped feature
 function onEachFeature(feature, layer) {
     

@@ -64,14 +64,20 @@
             var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
             
-            //create a Leaflet GeoJSON layer and add it to the map
+            
+            
+            //Eagle Projects
             var eagle = L.geoJson(eagleJson, {
                 onEachFeature: onEachFeature
             }).addTo(map);
 
-            //create a Leaflet GeoJSON layer and add it to the map
+            
+            
+            //Emergency Services
             var emg = L.geoJson(emgJson, {
-                onEachFeature: onEachFeature,
+                 onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.Name);
+                },
                 style: function(feature) {
                     switch (feature.properties.Use) {
                                 case 'Fire': return {color: "red"};
@@ -81,25 +87,29 @@
                 }
             }).addTo(map);    
 
-            //create a Leaflet GeoJSON layer and add it to the map
+            //Parks
             var rec = L.geoJson(recJson, {
-                onEachFeature: onEachFeature,
+                onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.Name);
+                },
                 color: "green"
             }).addTo(map);
 
-            //create a Leaflet GeoJSON layer and add it to the map
+            //Municipal
             var mun = L.geoJson(munJson, {
-                onEachFeature: onEachFeature,
+                onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.Name);
+                },
                 color: "lightblue"
             }).addTo(map);
-
-
-            //create a Leaflet GeoJSON layer and add it to the map
+            
+            //Hospitals
             var hos = L.geoJson(hosJson, {
-                onEachFeature: onEachFeature,
+                onEachFeature: function(feature,layer){
+                    layer.bindPopup(feature.properties.Name);
+                },
                 color: "white"
             }).addTo(map);
- 
 
             var basemaps = {
                 "Dark Gray": gray,
@@ -118,6 +128,7 @@
             L.control.layers(basemaps, overlaymaps).addTo(map);
             gray.addTo(map);
         };
+        
             
         //function to attach popups to each mapped feature
         function onEachFeature(feature, layer) {
@@ -131,20 +142,19 @@
                 }
                 layer.bindPopup(popupContent);
             };
-        };
-
+        };            
+            
         </script>
 	</head>
 
 	<body onload="init()">
 		<!--create information window for users giving map summary and data sources-->
-		<div id="infowindow" visibility: hidden title = "Map Information"><p>
-			This map can be used while working on requirement 2a. It displays all the locations as required in items one through four. Additionally, it displays Eagle Scout projects throughout New Egypt.<br><br>
+		<div id="infowindow" visibility: hidden title = "Hello Scouts!"><p>
+			This map can be used while working on requirement 2a, "On a map of your community, locate and point out the following: 1. Chief government buildings such as your city hall, county courthouse, and public works/services facilities. 2. Fire station, police station, and hospital nearest your home. 3. Parks, playgrounds, recreation areas, and trails. 4. Historical or other interesting points of interest."<br>Additionally, it displays Eagle Scout projects within our area.<br><br>
 			<b><u>How to use:</u></b><br><br>
-			A layer control widget is located in the upper-right corner of the map. You can toggle the basemap between a dark gray, a street map, and aerial imagery. You can also select which layers will be displayed on the map including goverment buildings, emergency services, hospitals, and parks. 
+			A layer control widget is located in the upper-right corner of the map. You can toggle the basemap between a dark gray, a street map, and aerial imagery. You can also select which layers will be displayed on the map. 
 			<br><br>
-            
-			<b><u>Data Sources:</u></b><br><br> 
+  
 			-Info icon by Joe Pictos from the Noun Project<br>
             -Eagle icon from freesvg.org</p>
         </div>

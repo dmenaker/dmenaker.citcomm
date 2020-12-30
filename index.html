@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Citizenship in the NE Community</title>
 
@@ -10,15 +10,32 @@
 		<link rel="stylesheet" href="lib/leaflet.css">
 		<link rel="stylesheet" href="css/style.css">
         
+<!--
+        <link rel="apple-touch-icon" sizes="57x57" href="fav/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="fav/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="fav/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="fav/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="fav/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="fav/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="fav/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="fav/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+        <link rel="manifest" href="fav/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="fav/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+-->
+        
         <script src="lib/jquery-3.5.1.js"></script>
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="lib/leaflet.js"></script>
         <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
         integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
         crossorigin=""></script>
-        
-<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-<!--        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
         
         <script type="text/javascript" src= "lib/jquery-ui-1.12.1//jquery-ui.js"></script>
         <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"></script>
@@ -32,7 +49,6 @@
         
         
         <script type="text/javascript">
-        
             //create blank function to create info window dialog when DOM is ready
             $(function () {
                 $("#infowindow").dialog({
@@ -47,13 +63,14 @@
                     $("#infowindow").dialog("open");
                 });
 
-            });   
-
+            });
+            
             var map;
             
             var eagleIcon = L.icon({
                 iconUrl: 'img/eagle.png',
-                iconSize: [30,40]
+                iconSize: [32,42],
+                iconAnchor: [20,45]
             });
 
             function init() {
@@ -76,7 +93,6 @@
                     onEachFeature: onEachFeature,
                     pointToLayer: function(feature, latlng) {return L.marker(latlng, {icon: eagleIcon})},
                 }).addTo(map);
-
 
 
                 //Emergency Services
@@ -162,7 +178,7 @@
 			<br><br>
   
 			-Info icon by Joe Pictos from the Noun Project<br>
-            -Eagle icon from freesvg.org</p>
+            -Eagle rank icon from webstockreview.net</p>
         </div>
         
 		<!--create div for map title and info button-->

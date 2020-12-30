@@ -33,116 +33,122 @@
         
         <script type="text/javascript">
         
-        //create blank function to create info window dialog when DOM is ready
-        $(function () {
-            $("#infowindow").dialog({
-                scrollTop: 0,
-                autoOpen: true,
-                height: 400,
-                width: 900
+            //create blank function to create info window dialog when DOM is ready
+            $(function () {
+                $("#infowindow").dialog({
+                    scrollTop: 0,
+                    autoOpen: false,
+                    height: 400,
+                    width: 900
 
-            });
-            $("#infowindow").scrollTop(0);
-            $(".info").click(function(){        
-                $("#infowindow").dialog("open");
-            });
+                });
+                $("#infowindow").scrollTop(0);
+                $(".info").click(function(){        
+                    $("#infowindow").dialog("open");
+                });
 
-        });   
+            });   
 
-        var map;
-
-        function init() {
+            var map;
             
-            map = L.map('mapid', {
-                center: [40.07, -74.53],
-                zoom: 11,
+            var eagleIcon = L.icon({
+                iconUrl: 'img/eagle.png',
+                iconSize: [30,40]
             });
 
-            //add tilelayers
-            var gray = L.esri.basemapLayer('DarkGray');
-            var imagery = L.esri.basemapLayer('ImageryFirefly');
-            var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
-            
-            
-            
-            //Eagle Projects
-            var eagle = L.geoJson(eagleJson, {
-                onEachFeature: onEachFeature
-            }).addTo(map);
+            function init() {
 
-            
-            
-            //Emergency Services
-            var emg = L.geoJson(emgJson, {
-                 onEachFeature: function(feature,layer){
-                    layer.bindPopup(feature.properties.Name);
-                },
-                style: function(feature) {
-                    switch (feature.properties.Use) {
-                                case 'Fire': return {color: "red"};
-                                case 'Police': return {color: "blue"};
-                                case 'EMS': return {color: "white"};
+                map = L.map('mapid', {
+                    center: [40.07, -74.53],
+                    zoom: 11,
+                });
+
+                //add tilelayers
+                var gray = L.esri.basemapLayer('DarkGray');
+                var imagery = L.esri.basemapLayer('ImageryFirefly');
+                var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'});
+
+
+
+                //Eagle Projects
+                var eagle = L.geoJson(eagleJson, {
+                    onEachFeature: onEachFeature,
+                    pointToLayer: function(feature, latlng) {return L.marker(latlng, {icon: eagleIcon})},
+                }).addTo(map);
+
+
+
+                //Emergency Services
+                var emg = L.geoJson(emgJson, {
+                     onEachFeature: function(feature,layer){
+                        layer.bindPopup(feature.properties.Name);
+                    },
+                    style: function(feature) {
+                        switch (feature.properties.Use) {
+                                    case 'Fire': return {color: "red"};
+                                    case 'Police': return {color: "blue"};
+                                    case 'EMS': return {color: "white"};
+                        }
                     }
-                }
-            }).addTo(map);    
+                }).addTo(map);    
 
-            //Parks
-            var rec = L.geoJson(recJson, {
-                onEachFeature: function(feature,layer){
-                    layer.bindPopup(feature.properties.Name);
-                },
-                color: "green"
-            }).addTo(map);
+                //Parks
+                var rec = L.geoJson(recJson, {
+                    onEachFeature: function(feature,layer){
+                        layer.bindPopup(feature.properties.Name);
+                    },
+                    color: "green"
+                }).addTo(map);
 
-            //Municipal
-            var mun = L.geoJson(munJson, {
-                onEachFeature: function(feature,layer){
-                    layer.bindPopup(feature.properties.Name);
-                },
-                color: "lightblue"
-            }).addTo(map);
-            
-            //Hospitals
-            var hos = L.geoJson(hosJson, {
-                onEachFeature: function(feature,layer){
-                    layer.bindPopup(feature.properties.Name);
-                },
-                color: "white"
-            }).addTo(map);
+                //Municipal
+                var mun = L.geoJson(munJson, {
+                    onEachFeature: function(feature,layer){
+                        layer.bindPopup(feature.properties.Name);
+                    },
+                    color: "lightblue"
+                }).addTo(map);
 
-            var basemaps = {
-                "Dark Gray": gray,
-                "Street Maps": osm,
-                "Imagery": imagery
+                //Hospitals
+                var hos = L.geoJson(hosJson, {
+                    onEachFeature: function(feature,layer){
+                        layer.bindPopup(feature.properties.Name);
+                    },
+                    color: "white"
+                }).addTo(map);
+
+                var basemaps = {
+                    "Dark Gray": gray,
+                    "Street Maps": osm,
+                    "Imagery": imagery
+                };
+
+                var overlaymaps = {
+                    "Municipal": mun,
+                    "Emg Services": emg,
+                    "Hospitals": hos,
+                    "Recreation": rec,
+                    "Eagle Projects": eagle
+                };
+
+                L.control.layers(basemaps, overlaymaps).addTo(map);
+                gray.addTo(map);
             };
 
-            var overlaymaps = {
-                "Municipal": mun,
-                "Emg Services": emg,
-                "Hospitals": hos,
-                "Recreation": rec,
-                "Eagle Projects": eagle
-            };
 
-            L.control.layers(basemaps, overlaymaps).addTo(map);
-            gray.addTo(map);
-        };
-        
-            
-        //function to attach popups to each mapped feature
-        function onEachFeature(feature, layer) {
+            //function to attach popups to each mapped feature
+            function onEachFeature(feature, layer) {
 
-            //no property named popupContent; instead, create html string with all properties
-            var popupContent = "";
-            if (feature.properties) {
-                //loop to add feature property names and values to html string
-                for (var property in feature.properties){
-                    popupContent += "<p>" + property + ": " + feature.properties[property] + "</p>";
-                }
-                layer.bindPopup(popupContent);
-            };
-        };            
+                //no property named popupContent; instead, create html string with all properties
+                var popupContent = "";
+                if (feature.properties) {
+                    //loop to add feature property names and values to html string
+                    for (var property in feature.properties){
+                        popupContent += "<p>" + property + ": " + feature.properties[property] + "</p>";
+                    }
+                    layer.bindPopup(popupContent);
+                };
+            };            
             
         </script>
 	</head>

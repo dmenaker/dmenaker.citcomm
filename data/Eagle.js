@@ -179,6 +179,60 @@ var eagleJson =
     "geometry":{"type":"Point", "coordinates":[-74.536507, 40.069588]}
     },
 
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Robert Shalack",
+        "Description": "Registering and marking of graves",
+        "Beneficiary": "Church of the Assumption",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.532182, 40.073676]}
+    },
+      
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Miquel Garces",
+        "Description": "Clearing trail and marking trees on the cross country trail",
+        "Beneficiary": "Plumsted Township/PTSD",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.525686, 40.080208]}
+    },
+      
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Shawn Richard",
+        "Description": "Created a video for students on the dangers of peer pressure",
+        "Beneficiary": "Plumsted Township School District",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.527612, 40.071186]}
+    },
+      
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Ian Manuguerra",
+        "Description": "Build cat houses for feral cats",
+        "Beneficiary": "Plumsted Township Trap Neuter Return",
+        "Troop": "9"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.532096, 40.082515]}
+    },
+      
+    {
+    "type":"Feature",
+    "properties":{
+        "Scout": "Dylan Manuguerra",
+        "Description": "",
+        "Beneficiary": "",
+        "Troop": "109"
+    },
+    "geometry":{"type":"Point", "coordinates":[-74.0, 40.0]}
+    },
 
 
 

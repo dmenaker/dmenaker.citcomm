@@ -54,7 +54,7 @@
                 $("#infowindow").dialog({
                     scrollTop: 0,
                     autoOpen: true,
-                    height: 400,
+                    height: 450,
                     width: 900
 
                 });
@@ -92,7 +92,7 @@
                 var eagle = L.geoJson(eagleJson, {
                     onEachFeature: onEachFeature,
                     pointToLayer: function(feature, latlng) {return L.marker(latlng, {icon: eagleIcon})},
-                }).addTo(map);
+                });
 
 
                 //Emergency Services
@@ -172,9 +172,9 @@
 	<body onload="init()">
 		<!--create information window for users giving map summary and data sources-->
 		<div id="infowindow" visibility: hidden title = "Hello Scouts!"><p>
-			This map can be used while working on requirement 2a, "On a map of your community, locate and point out the following: 1. Chief government buildings such as your city hall, county courthouse, and public works/services facilities. 2. Fire station, police station, and hospital nearest your home. 3. Parks, playgrounds, recreation areas, and trails. 4. Historical or other interesting points of interest."<br>Additionally, it displays Eagle Scout projects within our area.<br><br>
+			This map can be used while working on requirement 2a: "On a map of your community, locate and point out the following: 1. Chief government buildings such as your city hall, county courthouse, and public works/services facilities. 2. Fire station, police station, and hospital nearest your home. 3. Parks, playgrounds, recreation areas, and trails. 4. Historical or other interesting points of interest."<br>Make sure you locate all of these items on the map before meeting with your counselor to discuss.<br><br>Additionally, the map can display Eagle Scout projects within our area.<br><br>
 			<b><u>How to use:</u></b><br><br>
-			A layer control widget is located in the upper-right corner of the map. You can toggle the basemap between a dark gray, a street map, and aerial imagery. You can also select which layers will be displayed on the map. 
+			Use this map like you would use Google Maps, zoom in and out, pan, and click on items to learn about them. A layer control widget is located in the upper-right corner of the map. You can toggle the basemap between dark gray, a street map, and aerial imagery. You can also select which layers will be displayed on the map. 
 			<br><br>
   
 			-Info icon by Joe Pictos from the Noun Project<br>
